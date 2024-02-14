@@ -32,7 +32,7 @@ NB: All these packages need to be installed properly.
 - Experiment with different hand movements to draw shapes, lines, or any creative artwork you desire.
 
 ## Hand Landmark
-
+![Hand Landmarks](images/HandCoordinates.jpg)
 
 ## Credits
 
