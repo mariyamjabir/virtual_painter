@@ -1,8 +1,11 @@
 import cv2
 import HandTrackingModule as htm
+import numpy as np
 
 cap = cv2.VideoCapture(0)
 detector = htm.handDetector()
+draw_colour = (0,0,255)
+img_canvas = np.zeros((620,1010,3),np.uint8)
 
 while True:
     x,img = cap.read()
@@ -34,10 +37,10 @@ while True:
         print(fingers)
 
         #selection mode
-        xp,yp=0,0
+        
         if fingers[1] and fingers[2]:
             print("Selection mode")
-
+            xp,yp=0,0
             #to select the colours of finger tips
             if y1<100:
                 if 10<=x1<=200:
@@ -53,19 +56,32 @@ while True:
                     print("yellow")
                     draw_colour = (0,255,255)
                 elif 810<=x1<=1000:
-                    print("yellow")
+                    print("eraser")
                     draw_colour = (0,0,0)
 
                 cv2.rectangle(img,(x1,y1),(x2,y2),color=draw_colour,thickness=-1)
         #drawing mode
-        if fingers[1] and not fingers[2]:
+                
+        if (fingers[1] and not fingers[2]):
             print("Drawing mode")
-            cv2.circle(img,(x1,y1),15,color=draw_colour,thickness=-1)
-        
-        
-            
+            cv2.circle(img,(x1,y1),15,draw_colour,thickness=-1)
+
+            if xp==0 and yp==0:
+                xp = 1
+                yp = 1
+
+            if draw_colour==(0,0,0):
+
+                cv2.line(img,(xp,yp),(x1,y1),color = draw_colour,thickness=50)                
+                cv2.line(img_canvas,(xp,yp),(x1,y1),color = draw_colour,thickness=50)
+            else:
+                cv2.line(img,(xp,yp),(x1,y1),color = draw_colour,thickness=15)
+                cv2.line(img_canvas,(xp,yp),(x1,y1),color = draw_colour,thickness=15)
+            xp,yp = x1,y1
+                    
 
     cv2.imshow("Virtual Painter", img)
+    cv2.imshow("Virtual Painter Canvas", img_canvas)
     if cv2.waitKey(1) & 0xFF == 27:
         break
 cap.release()
