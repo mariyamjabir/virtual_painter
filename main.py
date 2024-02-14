@@ -78,10 +78,20 @@ while True:
                 cv2.line(img,(xp,yp),(x1,y1),color = draw_colour,thickness=15)
                 cv2.line(img_canvas,(xp,yp),(x1,y1),color = draw_colour,thickness=15)
             xp,yp = x1,y1
+
+        # To join 2 windows
+            img_grey = cv2.cvtColor(img_canvas,cv2.COLOR_BGR2GRAY)
+            _,img_inv = cv2.threshold(img_grey,20,255,cv2.THRESH_BINARY_INV)
+            img_inv = cv2.cvtColor(img_inv,cv2.COLOR_GRAY2BGR)
+
+            img = cv2.bitwise_and(img,img_inv)
+            img = cv2.bitwise_or(img,img_canvas)
+
+            img = cv2.addWeighted(img,1,img_canvas,0.5,0)
                     
 
     cv2.imshow("Virtual Painter", img)
-    cv2.imshow("Virtual Painter Canvas", img_canvas)
+    
     if cv2.waitKey(1) & 0xFF == 27:
         break
 cap.release()
