@@ -11,7 +11,7 @@ This project was developed using the following tools:
 ## Installation
 
 1. Clone the repository to your local machine :
-   git clone https://github.com/mariyamjabir/virtual-painter.git
+   git clone https://github.com/mariyamjabir/virtual_painter.git
    
 2. Install the required dependencies:
    pip install -r requirements.txt
