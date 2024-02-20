@@ -34,13 +34,6 @@ NB: All these packages need to be installed properly.
 ## Hand Landmark
 ![Hand Landmarks](images/HandCoordinates.jpg)
 
-## Credits
-
-Special thanks to:
-- Google developers for making the Mediapipe hand tracking module
-- OpenCV team for making the awesome Opencv Library
-- NumPy Team for making the Numpy Library
-
 ## Conclusion:
 The Virtual Painter project demonstrates the feasibility of creating a hands-free drawing application using computer vision techniques. By enabling users to draw and interact with a virtual canvas through hand gestures, the project opens up new possibilities for creative expression and interactive experiences. Further enhancements could include additional drawing tools, improved gesture recognition, and compatibility with different devices, expanding the project's functionality and usability.
 
