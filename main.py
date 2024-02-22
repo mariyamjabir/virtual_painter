@@ -6,6 +6,7 @@ cap = cv2.VideoCapture(0)
 detector = htm.handDetector()
 draw_colour = (0,0,255)
 img_canvas = np.zeros((620,1010,3),np.uint8)
+xp,yp=0,0
 
 while True:
     x,img = cap.read()
@@ -38,9 +39,9 @@ while True:
 
         #selection mode
         
-        if fingers[1] and fingers[2]:
+        if fingers[1] and fingers[2] and not any(fingers[3:]):
             print("Selection mode")
-            xp,yp=0,0
+            
             #to select the colours of finger tips
             if y1<100:
                 if 10<=x1<=200:
@@ -62,13 +63,12 @@ while True:
                 cv2.rectangle(img,(x1,y1),(x2,y2),color=draw_colour,thickness=-1)
         #drawing mode
                 
-        if (fingers[1] and not fingers[2]):
+        if (fingers[1] and not any(fingers[2:])):
             print("Drawing mode")
             cv2.circle(img,(x1,y1),15,draw_colour,thickness=-1)
 
             if xp==0 and yp==0:
-                xp = 1
-                yp = 1
+             xp, yp = x1, y1
 
             if draw_colour==(0,0,0):
 
