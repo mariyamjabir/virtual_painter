@@ -32,3 +32,5 @@ NB: All these packages need to be installed properly.
 ## Conclusion:
 The Virtual Painter project demonstrates the feasibility of creating a hands-free drawing application using computer vision techniques. By enabling users to draw and interact with a virtual canvas through hand gestures, the project opens up new possibilities for creative expression and interactive experiences. Further enhancements could include additional drawing tools, improved gesture recognition, and compatibility with different devices, expanding the project's functionality and usability.
 
+## Result
+![Virtual Painter Video](https://github.com/mariyamjabir/virtual_painter/blob/main/images/video_virtual.mp4)
