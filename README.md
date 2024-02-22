@@ -10,14 +10,9 @@ This project was developed using the following tools:
 
 ## Installation
 
-1. Clone the repository to your local machine :
-   git clone https://github.com/mariyamjabir/virtual-painter.git
-   
-2. Install the required dependencies:
-   pip install -r requirements.txt
-
-3. Run the `virtual_painter.py` script:
-   python virtual_painter.py
+1. Clone this repository to your local machine.
+2. Install the required dependencies.
+3. Run the `virtual_painter.py` script.
 
 ## Packages:
  - OpenCV 
@@ -33,13 +28,6 @@ NB: All these packages need to be installed properly.
 
 ## Hand Landmark
 ![Hand Landmarks](images/HandCoordinates.jpg)
-
-## Credits
-
-- Special thanks to:
-     Google developers for making the Mediapipe hand tracking module
-     OpenCV team for making the awesome Opencv Library
-     NumPy Team for making the Numpy Library
 
 ## Conclusion:
 The Virtual Painter project demonstrates the feasibility of creating a hands-free drawing application using computer vision techniques. By enabling users to draw and interact with a virtual canvas through hand gestures, the project opens up new possibilities for creative expression and interactive experiences. Further enhancements could include additional drawing tools, improved gesture recognition, and compatibility with different devices, expanding the project's functionality and usability.
